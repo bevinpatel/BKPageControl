@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct UISetting{
+struct BKSetting{
     var selectedSize    : CGSize         = CGSize(width: 20, height: 10);
     var selectedRadius  : CGFloat        = 5;
     var selectedOffSet  : UIOffset       = UIOffset(horizontal: 0, vertical: 0);
@@ -25,7 +25,7 @@ struct UISetting{
 }
 
 class BKPageControl: UIControl {
-    var setting = UISetting();
+    var setting = BKSetting();
     //Current page logic
     @IBInspectable var currentPage: Int{
         set(newValue) {
@@ -54,14 +54,14 @@ class BKPageControl: UIControl {
             self.layers.removeAll();
             self.layer.sublayers?.removeAll();
             for _ in 0 ..< internalTotalPages{
-                let layer = BKLayer()
+                let layer = BKPLayer()
                 self.layers.append(layer);
                 self.layer.addSublayer(layer);
             }
             self.setNeedsDisplay();
         }
     }
-    private var layers  = [BKLayer]();
+    private var layers  = [BKPLayer]();
     override func draw(_ rect: CGRect) {
         let maximumGaps = CGFloat(self.internalTotalPages-1);
         let totalWidth  = (maximumGaps * setting.minimumSpace) + (maximumGaps * setting.normalSize.width) + setting.selectedSize.width;
@@ -91,7 +91,7 @@ class BKPageControl: UIControl {
         return bezierPath
     }
 }
-class BKLayer : CAShapeLayer{
+class BKPLayer : CAShapeLayer{
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -102,7 +102,7 @@ class BKLayer : CAShapeLayer{
         super.init();
         self.lineCap        = kCALineCapRound
     }
-    fileprivate func changePath(path : UIBezierPath,isSelected : Bool,setting : UISetting){
+    fileprivate func changePath(path : UIBezierPath,isSelected : Bool,setting : BKSetting){
         if let oldPath  = self.path{
             let animationPath       = CABasicAnimation(keyPath: "path");
             animationPath.duration  = setting.animationTime

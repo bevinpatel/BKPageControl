@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GBc-KA-e5v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GNU-GU-uWy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="Ere-vC-w3q">
             <objects>
-                <viewController id="GBc-KA-e5v" customClass="ViewController" customModule="BKPageControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GBc-KA-e5v" customClass="BKViewController" customModule="BKPageControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jg5-PJ-27f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,7 +280,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4t6-eC-Z9p" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="19"/>
+            <point key="canvasLocation" x="-158" y="-36"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WdI-yf-Ebu">
+            <objects>
+                <viewController id="GNU-GU-uWy" customClass="BBViewController" customModule="BKPageControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qXa-CC-lQM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cC7-pd-Ns1" customClass="BBPageControl" customModule="BKPageControl" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="567"/>
+                                <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentPage">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalPages">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Rbn-nZ-6KN">
+                                <rect key="frame" x="73.5" y="586.5" width="229.5" height="60.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AAc-7T-PQd">
+                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="60.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYw-8Z-WtT">
+                                                <rect key="frame" x="0.0" y="0.0" width="88.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dLe-Ak-F4t">
+                                                <rect key="frame" x="9.5" y="30.5" width="70" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHO-xI-2Yg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="-"/>
+                                                        <connections>
+                                                            <action selector="onTapDecreaseWithButton:" destination="GNU-GU-uWy" eventType="touchUpInside" id="Cln-OQ-uRu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEF-vU-UHk">
+                                                        <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="+"/>
+                                                        <connections>
+                                                            <action selector="onTapIncreaseWithButton:" destination="GNU-GU-uWy" eventType="touchUpInside" id="Icm-gF-bwD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aBd-mg-1UQ">
+                                        <rect key="frame" x="128.5" y="0.0" width="101" height="60.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Current Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sea-UH-bJb">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gJZ-sT-wBl">
+                                                <rect key="frame" x="15.5" y="30.5" width="70" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzx-JJ-JmF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="←"/>
+                                                        <connections>
+                                                            <action selector="onTapPrevWithButton:" destination="GNU-GU-uWy" eventType="touchUpInside" id="S68-7e-2nx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rB-GC-qXL">
+                                                        <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="→"/>
+                                                        <connections>
+                                                            <action selector="onTapNextWithButton:" destination="GNU-GU-uWy" eventType="touchUpInside" id="WZK-Ze-3pb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rbn-nZ-6KN" firstAttribute="top" secondItem="cC7-pd-Ns1" secondAttribute="bottom" id="P7v-Er-mx0"/>
+                            <constraint firstItem="cC7-pd-Ns1" firstAttribute="leading" secondItem="hx5-8X-3i0" secondAttribute="leading" id="cYv-yT-y5m"/>
+                            <constraint firstItem="Rbn-nZ-6KN" firstAttribute="centerX" secondItem="qXa-CC-lQM" secondAttribute="centerX" id="efm-QN-ASf"/>
+                            <constraint firstItem="cC7-pd-Ns1" firstAttribute="trailing" secondItem="hx5-8X-3i0" secondAttribute="trailing" id="iqI-Eg-jdd"/>
+                            <constraint firstItem="hx5-8X-3i0" firstAttribute="bottom" secondItem="Rbn-nZ-6KN" secondAttribute="bottom" constant="20" id="l0z-p4-2pV"/>
+                            <constraint firstItem="cC7-pd-Ns1" firstAttribute="top" secondItem="hx5-8X-3i0" secondAttribute="top" id="pav-kL-xbW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hx5-8X-3i0"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="array" destination="cC7-pd-Ns1" collectionClass="NSMutableArray" id="1If-ph-8k1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxa-FE-YPW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791.20000000000005" y="-35.532233883058474"/>
         </scene>
     </scenes>
 </document>

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521049CD211DA57C00E8B552 /* BBPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521049CC211DA57C00E8B552 /* BBPageControl.swift */; };
+		521049CF211DAB3700E8B552 /* BBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521049CE211DAB3600E8B552 /* BBViewController.swift */; };
 		524F5C12211C89EF0028D30B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F5C11211C89EF0028D30B /* AppDelegate.swift */; };
-		524F5C14211C89EF0028D30B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F5C13211C89EF0028D30B /* ViewController.swift */; };
+		524F5C14211C89EF0028D30B /* BKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F5C13211C89EF0028D30B /* BKViewController.swift */; };
 		524F5C17211C89EF0028D30B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524F5C15211C89EF0028D30B /* Main.storyboard */; };
 		524F5C19211C89F10028D30B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524F5C18211C89F10028D30B /* Assets.xcassets */; };
 		524F5C1C211C89F10028D30B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524F5C1A211C89F10028D30B /* LaunchScreen.storyboard */; };
@@ -27,9 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521049CC211DA57C00E8B552 /* BBPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBPageControl.swift; sourceTree = "<group>"; };
+		521049CE211DAB3600E8B552 /* BBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBViewController.swift; sourceTree = "<group>"; };
 		524F5C0E211C89EF0028D30B /* BKPageControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKPageControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524F5C11211C89EF0028D30B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		524F5C13211C89EF0028D30B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		524F5C13211C89EF0028D30B /* BKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKViewController.swift; sourceTree = "<group>"; };
 		524F5C16211C89EF0028D30B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		524F5C18211C89F10028D30B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524F5C1B211C89F10028D30B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521049D0211DB5B600E8B552 /* BKPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				524F5C13211C89EF0028D30B /* BKViewController.swift */,
+				524F5C31211C8A050028D30B /* BKPageControl.swift */,
+			);
+			path = BKPageControl;
+			sourceTree = "<group>";
+		};
 		524F5C05211C89EF0028D30B = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				524F5C11211C89EF0028D30B /* AppDelegate.swift */,
-				524F5C13211C89EF0028D30B /* ViewController.swift */,
-				524F5C31211C8A050028D30B /* BKPageControl.swift */,
+				521049CE211DAB3600E8B552 /* BBViewController.swift */,
+				521049CC211DA57C00E8B552 /* BBPageControl.swift */,
+				521049D0211DB5B600E8B552 /* BKPageControl */,
 				524F5C15211C89EF0028D30B /* Main.storyboard */,
 				524F5C18211C89F10028D30B /* Assets.xcassets */,
 				524F5C1A211C89F10028D30B /* LaunchScreen.storyboard */,
@@ -200,9 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521049CD211DA57C00E8B552 /* BBPageControl.swift in Sources */,
 				524F5C32211C8A060028D30B /* BKPageControl.swift in Sources */,
-				524F5C14211C89EF0028D30B /* ViewController.swift in Sources */,
+				524F5C14211C89EF0028D30B /* BKViewController.swift in Sources */,
 				524F5C12211C89EF0028D30B /* AppDelegate.swift in Sources */,
+				521049CF211DAB3700E8B552 /* BBViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
