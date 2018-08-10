@@ -26,16 +26,34 @@ struct UISetting{
 
 class BKPageControl: UIControl {
     var setting = UISetting();
-    @IBInspectable var currentPage: Int   = 0{
-        didSet {
+    //Current page logic
+    @IBInspectable var currentPage: Int{
+        set(newValue) {
+            internalCurrentPage = max(0, min(newValue, internalTotalPages-1))
+        }
+        get {
+            return internalCurrentPage
+        }
+    }
+    private var internalCurrentPage: Int = 0{
+        didSet{
             self.setNeedsDisplay();
         }
     }
-    @IBInspectable var numberOfPages: Int = 3{
-        didSet {
+    //Number of page logic
+    @IBInspectable var totalPages: Int{
+        set(newValue) {
+            internalTotalPages = max(internalCurrentPage+1,newValue)
+        }
+        get {
+            return internalTotalPages
+        }
+    }
+    private var internalTotalPages: Int = 3{
+        didSet{
             self.layers.removeAll();
             self.layer.sublayers?.removeAll();
-            for _ in 0 ..< numberOfPages{
+            for _ in 0 ..< internalTotalPages{
                 let layer = BKLayer()
                 self.layers.append(layer);
                 self.layer.addSublayer(layer);
@@ -45,12 +63,12 @@ class BKPageControl: UIControl {
     }
     private var layers  = [BKLayer]();
     override func draw(_ rect: CGRect) {
-        let maximumGaps = CGFloat(self.numberOfPages-1);
+        let maximumGaps = CGFloat(self.internalTotalPages-1);
         let totalWidth  = (maximumGaps * setting.minimumSpace) + (maximumGaps * setting.normalSize.width) + setting.selectedSize.width;
         var xPos = (rect.width - totalWidth) / 2
         
         self.layers.forEach { (layer) in
-            if self.layers.index(of: layer) == self.currentPage {
+            if self.layers.index(of: layer) == self.internalCurrentPage {
                 let path = self.longRingPath(point: CGPoint(x: xPos+setting.selectedOffSet.horizontal, y: ((rect.size.height-setting.selectedSize.height)/2) + setting.selectedOffSet.vertical))
                 layer.changePath(path : path,isSelected : true, setting    : setting);
                 xPos    += setting.selectedSize.width + setting.minimumSpace;

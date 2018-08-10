@@ -129,14 +129,26 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func onChangeNumberOFPage(id : UIStepper) -> Void{
+    // Change number of page
+    @IBAction func onTapIncrease(button : UIButton) -> Void{
         array.forEach { (bkPageControl) in
-            bkPageControl.numberOfPages = Int(id.value)
+            bkPageControl.totalPages = bkPageControl.totalPages + 1
         }
     }
-    @IBAction func onChangeCurrentPage(id : UIStepper) -> Void{
+    @IBAction func onTapDecrease(button : UIButton) -> Void{
         array.forEach { (bkPageControl) in
-            bkPageControl.currentPage = Int(id.value)
+            bkPageControl.totalPages = bkPageControl.totalPages - 1
+        }
+    }
+    // Change current page
+    @IBAction func onTapNext(button : UIButton) -> Void{
+        array.forEach { (bkPageControl) in
+            bkPageControl.currentPage = bkPageControl.currentPage + 1
+        }
+    }
+    @IBAction func onTapPrev(button : UIButton) -> Void{
+        array.forEach { (bkPageControl) in
+            bkPageControl.currentPage = bkPageControl.currentPage - 1
         }
     }
 }
