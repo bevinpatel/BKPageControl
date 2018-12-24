@@ -23,7 +23,7 @@ struct BKSetting{
     var animationTime   : CFTimeInterval = 0.1;
     var minimumSpace    : CGFloat        = 5.0;
 }
-
+@IBDesignable
 class BKPageControl: UIControl {
     var setting = BKSetting();
     //Current page logic

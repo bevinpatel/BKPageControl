@@ -27,23 +27,23 @@ class BBViewController: UIViewController {
     // Change number of page
     @IBAction func onTapIncrease(button : UIButton) -> Void{
         array.forEach { (bbPageControl) in
-            bbPageControl.totalPages = bbPageControl.totalPages + 1
+            //bbPageControl.totalPages = bbPageControl.totalPages + 1
         }
     }
     @IBAction func onTapDecrease(button : UIButton) -> Void{
         array.forEach { (bbPageControl) in
-            bbPageControl.totalPages = bbPageControl.totalPages - 1
+            //bbPageControl.totalPages = bbPageControl.totalPages - 1
         }
     }
     // Change current page
     @IBAction func onTapNext(button : UIButton) -> Void{
         array.forEach { (bbPageControl) in
-            bbPageControl.currentPage = bbPageControl.currentPage + 1
+            //bbPageControl.currentPage = bbPageControl.currentPage + 1
         }
     }
     @IBAction func onTapPrev(button : UIButton) -> Void{
         array.forEach { (bbPageControl) in
-            bbPageControl.currentPage = bbPageControl.currentPage - 1
+            //bbPageControl.currentPage = bbPageControl.currentPage - 1
         }
     }
 }
